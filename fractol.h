@@ -19,6 +19,13 @@
 # define  ON_RELEASE 1L<<0
 
 
+typedef struct i_img 
+{
+	
+};
+
+
+
 typedef struct s_params {
 void		*mlx;
 void		*mlx_win;
@@ -44,6 +51,7 @@ double		e_y;
 int			color;
 int			zoom;
 int 		index;
+double		scale;
 }				t_params; 
 
 void mandelbrot(t_params *f);

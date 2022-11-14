@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juleng <juleng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:35:16 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/11 16:24:34 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/14 10:22:27 by juleng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ int main (int argc, char **argv)
 }
 */
 
-int main ()
+/*int main ()
 {
 	printf("%s", exitprint);
 	usleep(500000);
 	printf("%s", exitprint2);
 	usleep(500000);
 	printf("%s", exitprint3);
-}
+}*/

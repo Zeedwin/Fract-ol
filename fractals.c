@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractals.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juleng <juleng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:35:06 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/10 16:03:45 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/14 10:52:50 by juleng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,16 @@ void mandelbrot(t_params *f)
 	}
 }
 
-void zoom_out(t_params f)
+void	mouse_zoom_in(t_params *f, int m_x, int m_y)
 {
-	t_list 
+	f->x_o = m_x - (m_x - f->x_o) * 1.1;
+	f->y_o = m_y - (m_y - f->y_o) * 1.1;
+	f->scale *= 1.1;
 }
 
-void zoom_in(t_params f)
+void	mouse_zoom_out(t_params *f, int m_x, int m_y)
 {
-	t_params zoom;
-	
-	
+	f->x_o = m_x - (m_x - f->x_o) / 1.1;
+	f->y_o = m_y - (m_y - f->y_o) / 1.1;
+	f->scale /= 1.1;
 }
