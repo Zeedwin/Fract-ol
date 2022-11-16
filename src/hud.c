@@ -6,11 +6,11 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 00:20:00 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 11:01:20 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:57:08 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 static void	hud_flush(t_env *e)
 {

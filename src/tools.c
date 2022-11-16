@@ -6,13 +6,13 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 10:34:10 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 11:07:07 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:58:08 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
-int		usage(void)
+/*int		usage(void)
 {
 	ft_putchar('\n');
 	ft_putendl("\x1b[1;4;31mUsage:\x1b[0m ./fractol \x1b[1;32m[type]\x1b[0m\n");
@@ -25,7 +25,7 @@ int		usage(void)
 	ft_putendl("\x1b[1;32mmandeldrop\x1b[0m -> the Mandeldrop set");
 	ft_putendl("You can launch multiple fractals separating them with a space");
 	exit(EXIT_FAILURE);
-}
+}*/
 
 void	error(char *str)
 {

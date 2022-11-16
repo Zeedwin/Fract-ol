@@ -6,11 +6,11 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:34:10 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 11:03:10 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:56:47 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 static void					multibrot_test(t_env *e, int x, int y)
 {

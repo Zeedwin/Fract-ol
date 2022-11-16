@@ -6,11 +6,11 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 23:25:57 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/15 23:26:00 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:57:56 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 int		mlx_mouse_events(int btn, int x, int y, t_env *e)
 {

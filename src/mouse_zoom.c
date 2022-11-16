@@ -6,12 +6,12 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 23:26:04 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/15 23:26:06 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:58:00 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 void	mouse_zoom_in(t_env *e, int m_x, int m_y)
 {

@@ -6,13 +6,13 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 00:20:00 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 11:01:26 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:57:11 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 int				scene_init(t_env *e)
 {

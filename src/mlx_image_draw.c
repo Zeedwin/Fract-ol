@@ -6,11 +6,12 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:34:10 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 11:03:23 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/16 15:44:27 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
+#include "../libft/libft.h"
 
 int				mlx_img_pix_put(t_img *sce, int x, int y, int color)
 {

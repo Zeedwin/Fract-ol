@@ -6,13 +6,13 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 00:20:00 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 11:01:01 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:56:56 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 int		get_color(t_env *e, int x, int y)
 {

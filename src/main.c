@@ -6,28 +6,20 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 23:23:18 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 11:01:58 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/16 16:29:10 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 static int		fractal_select(char *av)
 {
-	if (ft_strcmp("mandelbrot", av) == 0)
+	if (ft_strncmp("mandelbrot", av, 11) == 0)
 		return (0);
-	else if (ft_strcmp("tricorn", av) == 0)
-		return (1);
-	else if (ft_strcmp("julia", av) == 0)
+	else if (ft_strncmp("julia", av, 6) == 0)
 		return (2);
-	else if (ft_strcmp("burningship", av) == 0)
+	else if (ft_strncmp("burningship", av, 12) == 0)
 		return (3);
-	else if (ft_strcmp("celtic", av) == 0)
-		return (4);
-	else if (ft_strcmp("mandeldrop", av) == 0)
-		return (5);
-	else if (ft_strcmp("test", av) == 0)
-		return (9);
 	else
 		return (-1);
 }
@@ -49,7 +41,7 @@ static void		launch(t_env **e, char **av, int i)
 	e[i]->select = fractal_select(av[i]);
 	if (e[i]->select == -1)
 	{
-		usage();
+		//usage();
 		error("\x1b[2;31mBad param error\x1b[0m");
 	}
 	init(e[i]);
@@ -89,7 +81,7 @@ int				main(int ac, char **av)
 
 	if (!(e = malloc(sizeof(t_env) * ac)))
 		error("\x1b[2;31mCan't initialize Fractol environment array\x1b[0m");
-	(ac < 2 || ac > 7 ? usage() : 0);
+	//(ac < 2 || ac > 7 ? usage() : 0);
 	if (ac > 2)
 		fork_launch(ac, av);
 	else

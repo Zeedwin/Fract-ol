@@ -6,11 +6,11 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 23:23:46 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/15 23:23:50 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:57:31 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 static	void	mlx_key_press_1(int key, t_env *e)
 {

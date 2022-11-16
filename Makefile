@@ -6,7 +6,7 @@
 #    By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 22:55:17 by jgirard-          #+#    #+#              #
-#    Updated: 2022/11/16 10:54:00 by jgirard-         ###   ########.fr        #
+#    Updated: 2022/11/16 16:25:28 by jgirard-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,8 @@ INC = 					$(addprefix $(INC_PATH)/,$(INC_NAMES))
 INC_PATH =				./includes
 
 LIBFT :=				$(LIBFT_PATH)/libft.a
-LIBFT_PATH :=			./libft
-LIBFT_INC_PATH :=		./libft
-LIBFTFLAGS :=			-lft
+LIBFT_PATH :=			./libft/libft.h
+LIBFT_INC_PATH :=		./libft/libft.h
 
 LIBMATHFLAGS :=			-lm
 
@@ -33,7 +32,7 @@ INC_NAMES = 			fractol.h \
 MLXFLAGS =				-framework OpenGL -framework AppKit
 KEYS =					-DMAC_KEYS
 OS_NAME =				"OpenGL"
-MLX_PATH =				./mlx/minilibx_opengl_20191021
+MLX_PATH =				./minilibx_opengl_20191021
 
 MLX =					$(MLX_PATH)/libmlx.a
 
@@ -46,9 +45,8 @@ SRC =					$(addprefix $(SRC_PATH)/,$(SRC_NAME))
 SRC_PATH =				./src
 SRC_NAME =  			burning_ship.c \
 						color.c \
-						color_ranges.c \
+						fractal_color_init.c \
 						guides.c \
-						hud.c \
 						init.c \
 						julia.c \
 						mlx_main_loop.c \
@@ -61,8 +59,10 @@ SRC_NAME =  			burning_ship.c \
 						mandelbrot.c \
 					    render.c \
 						tools.c \
-						main.c
-
+						main.c \
+						utils.c \
+						utils2.c
+						
 all: $(NAME)
 
 $(NAME): libft mlx $(SRC) $(INC) $(OBJ_PATH) $(OBJ)
@@ -90,7 +90,7 @@ debug_flag:
 clean:
 	@rm -rf $(OBJ_PATH)
 
-fclean: cleanmlx fcleanlibft clean 
+fclean: fcleanlibft clean 
 	@rm -rf $(NAME) ./config
 
 libft:

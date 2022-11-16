@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   guides.c                                           :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 00:20:00 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 14:57:05 by jgirard-         ###   ########.fr       */
+/*   Created: 2022/11/16 16:14:06 by jgirard-          #+#    #+#             */
+/*   Updated: 2022/11/16 16:27:15 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include	"unistd.h"
 
-#include "../includes/fractol.h"
-
-void			mid_guides(t_env *e)
+void	ft_putstr(char *s)
 {
-	t_ldpt		pta;
-	t_ldpt		ptb;
-	t_ldpt		ptc;
-	t_ldpt		ptd;
+	int	i;
 
-	pta.r = e->s_w / 2;
-	pta.i = 0;
-	ptb.r = e->s_w / 2;
-	ptb.i = e->s_h;
-	ptc.r = 0;
-	ptc.i = e->s_h / 2;
-	ptd.r = e->s_w;
-	ptd.i = e->s_h / 2;
-	mlx_img_line(e->sce, pta, ptb, 0x0000FF00);
-	mlx_img_line(e->sce, ptc, ptd, 0x0000FF00);
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i] != '\0')
+	{
+		write (1, &s[i], 1);
+		i++;
+	}
+}
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	if (n == 0)
+	{
+		return (0);
+	}
+	while (i < (n - 1) && s1[i] && s1[i] == s2[i])
+	{
+		i++;
+	}
+	return (s1[i] - s2[i]);
 }

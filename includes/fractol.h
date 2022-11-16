@@ -6,15 +6,13 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:24:06 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 11:08:32 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/16 16:12:36 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# ifdef MAC_KEYS
-#  include "mac_keys.h"
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -22,15 +20,11 @@
 # include <math.h>
 # include <fcntl.h>
 # include <limits.h>
-# include "libft.h"
-# include "mlx.h"
-# include "get_next_line.h"
+# include "../libft/libft.h"
+# include "../minilibx_opengl_20191021/mlx.h"
+# include "mac_keys.h"
 
-# ifdef DEBUG
-#  define DBUG					1
-# else
-#  define DBUG					0
-# endif
+# define DBUG			1
 
 # define DESTROYNOTIFY			17
 # define KEYPRESSMASK			(1L<<0)
@@ -160,5 +154,6 @@ void				hud(t_env *e);
 int					usage(void);
 
 void				mid_guides(t_env *e);
+int					ft_abs(int i);
 
 #endif
