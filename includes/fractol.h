@@ -6,7 +6,7 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:24:06 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 16:12:36 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/16 17:46:01 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ typedef	struct		s_env
 
 void				init(t_env *e);
 int					scene_init(t_env *e);
-
+void				ft_putendl(char *s);
 int					quit(t_env *e);
 void				error(char *str);
 char				*get_fractal(t_env *e);

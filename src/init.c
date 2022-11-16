@@ -6,7 +6,7 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 00:20:00 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 14:57:11 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/16 18:02:48 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void		options_init(t_env *e)
 	e->w_w = 1440;
 	e->w_h = 900;
 	e->sca = 400;
-	e->ite = 50;
+	e->ite = 150;
 	e->bud_min_ite = 50;
 	e->bud_max_ite = 10000;
 	e->mod = 0;

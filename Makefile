@@ -6,7 +6,7 @@
 #    By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 22:55:17 by jgirard-          #+#    #+#              #
-#    Updated: 2022/11/16 16:25:28 by jgirard-         ###   ########.fr        #
+#    Updated: 2022/11/16 18:03:22 by jgirard-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,13 +55,13 @@ SRC_NAME =  			burning_ship.c \
 						mlx_key_release.c \
 						mlx_key_repeated.c \
 						mlx_mouse.c \
-						mouse_zoom.c \
 						mandelbrot.c \
 					    render.c \
 						tools.c \
 						main.c \
 						utils.c \
-						utils2.c
+						utils2.c \
+						zoom_in_out.c
 						
 all: $(NAME)
 

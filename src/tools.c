@@ -6,26 +6,24 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 10:34:10 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 14:58:08 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/16 17:54:43 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
+#include "../libft/libft.h"
 
-/*int		usage(void)
+int		usage(void)
 {
 	ft_putchar('\n');
-	ft_putendl("\x1b[1;4;31mUsage:\x1b[0m ./fractol \x1b[1;32m[type]\x1b[0m\n");
+	ft_putendl("\x1b[1;4;31mInput:\x1b[0m ./fractol \x1b[1;32m[type]\x1b[0m\n");
 	ft_putendl("\x1b[1;4;31mAvailable fractal types:\x1b[0m");
 	ft_putendl("\x1b[1;32mmandelbrot\x1b[0m -> the Mandelbrot set");
-	ft_putendl("\x1b[1;32mtricorn\x1b[0m -> the Tricorn set aka Mandelbar");
 	ft_putendl("\x1b[1;32mjulia\x1b[0m -> the Julia set");
 	ft_putendl("\x1b[1;32mburning\x1b[0m -> the Burning Ship set");
-	ft_putendl("\x1b[1;32mceltic\x1b[0m -> the Celtic set");
-	ft_putendl("\x1b[1;32mmandeldrop\x1b[0m -> the Mandeldrop set");
-	ft_putendl("You can launch multiple fractals separating them with a space");
+	ft_putendl("Input a space to launch multiple fractals at once");
 	exit(EXIT_FAILURE);
-}*/
+}
 
 void	error(char *str)
 {

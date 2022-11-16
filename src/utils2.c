@@ -6,7 +6,7 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:14:06 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 16:27:15 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/16 17:45:24 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,15 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	}
 	return (s1[i] - s2[i]);
+}
+
+void	ft_putendl(char *s)
+{
+	if (!s)
+		return ;
+	while (*s != '\0')
+	{
+		write(1, s++, 1);
+	}
+	write(1, "\n", 1);
 }

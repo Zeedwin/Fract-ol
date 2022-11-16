@@ -6,7 +6,7 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 23:23:18 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 16:29:10 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/16 17:46:41 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void		launch(t_env **e, char **av, int i)
 	e[i]->select = fractal_select(av[i]);
 	if (e[i]->select == -1)
 	{
-		//usage();
+		usage();
 		error("\x1b[2;31mBad param error\x1b[0m");
 	}
 	init(e[i]);
@@ -81,7 +81,7 @@ int				main(int ac, char **av)
 
 	if (!(e = malloc(sizeof(t_env) * ac)))
 		error("\x1b[2;31mCan't initialize Fractol environment array\x1b[0m");
-	//(ac < 2 || ac > 7 ? usage() : 0);
+	(ac < 2 || ac > 7 ? usage() : 0);
 	if (ac > 2)
 		fork_launch(ac, av);
 	else
