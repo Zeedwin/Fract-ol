@@ -6,13 +6,13 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 00:20:00 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 14:56:54 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:24:59 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-static void			burning_ship_test(t_env *e, int x, int y)
+static void	burning_ship_test(t_env *e, int x, int y)
 {
 	t_ldpt			c;
 	t_ldpt			z;
@@ -20,8 +20,8 @@ static void			burning_ship_test(t_env *e, int x, int y)
 	int				i;
 
 	i = 0;
-	c.r = ((long double)x - e->off_x) / e->sca;
-	c.i = ((long double)y - e->off_y) / e->sca;
+	c.r = ((long double)x - e->o_x) / e->sca;
+	c.i = ((long double)y - e->o_y) / e->sca;
 	z.r = 0;
 	z.i = 0;
 	while (i < e->ite && e->mod < 4)
@@ -40,7 +40,7 @@ static void			burning_ship_test(t_env *e, int x, int y)
 		put_color(e, x, y, i);
 }
 
-void				burning_ship(t_env *e)
+void	burning_ship(t_env *e)
 {
 	int				i;
 	int				j;

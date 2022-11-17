@@ -6,14 +6,13 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 00:20:00 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 14:57:05 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:35:19 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/fractol.h"
 
-void			mid_guides(t_env *e)
+void	mid_guides(t_env *e)
 {
 	t_ldpt		pta;
 	t_ldpt		ptb;

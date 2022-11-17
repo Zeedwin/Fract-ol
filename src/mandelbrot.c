@@ -6,7 +6,7 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:34:10 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 14:56:47 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:25:58 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void					multibrot_test(t_env *e, int x, int y)
 	int						i;
 
 	i = 0;
-	c = ((x - e->off_x) / e->sca) + (((y - e->off_y) / e->sca) * I);
+	c = ((x - e->o_x) / e->sca) + (((y - e->o_y) / e->sca) * I);
 	z = 0 + (0 * I);
 	while (e->mod < 4 && i < e->ite)
 	{
@@ -43,8 +43,8 @@ static void					mandelbrot_test(t_env *e, int x, int y)
 	int						i;
 
 	i = 0;
-	c.r = ((long double)x - e->off_x) / e->sca;
-	c.i = ((long double)y - e->off_y) / e->sca;
+	c.r = ((long double)x - e->o_x) / e->sca;
+	c.i = ((long double)y - e->o_y) / e->sca;
 	z.r = 0;
 	z.i = 0;
 	while (i < e->ite && e->mod < 4)
@@ -63,7 +63,7 @@ static void					mandelbrot_test(t_env *e, int x, int y)
 		put_color(e, x, y, i);
 }
 
-void						multibrot(t_env *e)
+void						mandelbrot(t_env *e)
 {
 	int						i;
 	int						j;

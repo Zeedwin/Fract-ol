@@ -6,22 +6,19 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 00:20:00 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 18:02:48 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/17 16:08:14 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "../includes/fractol.h"
 
-int				scene_init(t_env *e)
+int	scene_init(t_env *e)
 {
 	int			bpp;
 	int			s_l;
 	int			endian;
 
-	if (!(e->sce = malloc(sizeof(t_img))))
-		error("\x1b[2;31mCan't initialize the scene\x1b[0m");
+	e->sce = malloc(sizeof(t_img));
 	e->s_w = e->w_w;
 	e->s_h = e->w_h;
 	e->sce->p_img = mlx_new_image(e->mlx, e->s_w, e->s_h);
@@ -33,18 +30,18 @@ int				scene_init(t_env *e)
 	e->sce->endian = endian;
 	e->cen_x = e->s_w / 2;
 	e->cen_y = e->s_h / 2;
-	e->off_x = (float)e->cen_x;
-	e->off_y = (float)e->cen_y;
+	e->o_x = (float)e->cen_x;
+	e->o_y = (float)e->cen_y;
 	return (0);
 }
 
-static void		options_init(t_env *e)
+static void	options_init(t_env *e)
 {
-	e->w_w = 1440;
-	e->w_h = 900;
+	e->w_w = 1540;
+	e->w_h = 1000;
 	e->sca = 400;
 	e->ite = 150;
-	e->bud_min_ite = 50;
+	e->bud_min_ite = 150;
 	e->bud_max_ite = 10000;
 	e->mod = 0;
 	e->hue = 0x00000000;
@@ -65,12 +62,10 @@ static void		options_init(t_env *e)
 		e->debug = 1;
 }
 
-void			init(t_env *e)
+void	init(t_env *e)
 {
 	options_init(e);
-	if (!(e->mlx = mlx_init()))
-		error("\x1b[2;31mError can't initialize minilibx\x1b[0m");
-	if (!(e->win = mlx_new_window(e->mlx, e->w_w, e->w_h, "Fract'ol")))
-		error("\x1b[2;31mError minilibx window creation failed\x1b[0m");
+	e->mlx = mlx_init();
+	e->win = mlx_new_window(e->mlx, e->w_w, e->w_h, "Fract'ol");
 	scene_init(e);
 }

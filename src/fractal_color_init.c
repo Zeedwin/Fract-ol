@@ -6,15 +6,13 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 00:20:00 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 14:56:52 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/17 16:05:33 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "../includes/fractol.h"
 
-void		orbit_color_range(t_env *e, int x, int y, int i)
+void	orbit_color_range(t_env *e, int x, int y, int i)
 {
 	int		a;
 	int		r;
@@ -34,7 +32,7 @@ void		orbit_color_range(t_env *e, int x, int y, int i)
 	mlx_img_pix_put(e->sce, x, y, e->hue);
 }
 
-void		color_range_7(t_env *e, int x, int y, int i)
+void	color_range_7(t_env *e, int x, int y, int i)
 {
 	int		a;
 	int		r;
@@ -59,7 +57,7 @@ void		color_range_7(t_env *e, int x, int y, int i)
 	mlx_img_pix_put(e->sce, x, y, e->hue);
 }
 
-void		color_range_5_6(t_env *e, int x, int y, int i)
+void	color_range_5_6(t_env *e, int x, int y, int i)
 {
 	int		a;
 	int		r;
@@ -87,7 +85,7 @@ void		color_range_5_6(t_env *e, int x, int y, int i)
 	mlx_img_pix_put(e->sce, x, y, e->hue);
 }
 
-void		color_range_1_4(t_env *e, int x, int y, int i)
+void	color_range_1_4(t_env *e, int x, int y, int i)
 {
 	int		a;
 	int		r;

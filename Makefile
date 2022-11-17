@@ -6,7 +6,7 @@
 #    By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 22:55:17 by jgirard-          #+#    #+#              #
-#    Updated: 2022/11/16 18:03:22 by jgirard-         ###   ########.fr        #
+#    Updated: 2022/11/17 19:04:44 by jgirard-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = 					fractol
 
 CC = 					clang
-CFLAGS +=				-Wall -Wextra -Werror
+CFLAGS +=				-Wall -Wextra -Werror -fsanitize=address
 OFLAGS := 				-O3
 RM := 					rm -rf
 
@@ -22,8 +22,8 @@ INC = 					$(addprefix $(INC_PATH)/,$(INC_NAMES))
 INC_PATH =				./includes
 
 LIBFT :=				$(LIBFT_PATH)/libft.a
-LIBFT_PATH :=			./libft/libft.h
-LIBFT_INC_PATH :=		./libft/libft.h
+LIBFT_PATH :=			./libft
+LIBFT_INC_PATH :=		./libft
 
 LIBMATHFLAGS :=			-lm
 
@@ -56,7 +56,7 @@ SRC_NAME =  			burning_ship.c \
 						mlx_key_repeated.c \
 						mlx_mouse.c \
 						mandelbrot.c \
-					    render.c \
+					    ft_render.c \
 						tools.c \
 						main.c \
 						utils.c \
@@ -66,7 +66,7 @@ SRC_NAME =  			burning_ship.c \
 all: $(NAME)
 
 $(NAME): libft mlx $(SRC) $(INC) $(OBJ_PATH) $(OBJ)
-	$(CC) -o $@ $(OBJ) -L$(LIBFT_PATH) $(LIBFTFLAGS) $(MLX) $(MLXFLAGS) $(LIBMATHFLAGS) $(GPU_L)
+	$(CC) $(CFLAGS) -o $@ $(OBJ) -L$(LIBFT_PATH) $(LIBFTFLAGS) $(MLX) $(MLXFLAGS) $(LIBMATHFLAGS) $(GPU_L)
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(INCLUDES_PATH) $(INC)
 	$(CC) $(CFLAGS) $(OFLAGS) -c $< -o $@ -I $(INC_PATH) -I $(LIBFT_INC_PATH) -I $(MLX_PATH) $(GPU_MACRO) $(KEYS) $(DEBUG_MACRO)
@@ -105,4 +105,4 @@ fcleanlibft: cleanlibft
 mlx:
 	make -C $(MLX_PATH)/ all
 
-re: fclean
+re: fclean all

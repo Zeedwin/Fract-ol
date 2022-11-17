@@ -6,39 +6,38 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:24:06 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 17:46:01 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/17 19:19:42 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-
-# include <stdlib.h>
 # include <unistd.h>
-# include <complex.h>
-# include <math.h>
 # include <fcntl.h>
-# include <limits.h>
+# include <stdlib.h>
 # include "../libft/libft.h"
+# include <complex.h>
+# include <limits.h>
+# include <math.h>
 # include "../minilibx_opengl_20191021/mlx.h"
 # include "mac_keys.h"
 
 # define DBUG			1
 
 # define DESTROYNOTIFY			17
-# define KEYPRESSMASK			(1L<<0)
-# define KEYRELEASEMASK			(1L<<1)
+# define KEYPRESSMASK			1L<<0
+# define KEYRELEASEMASK			1L<<1
 # define KEYPRESS				2
 # define KEYRELEASE				3
 
-typedef	struct		s_ldpt
+typedef struct s_ldpt
 {
 	long double		r;
 	long double		i;
 }					t_ldpt;
 
-typedef struct		s_img
+typedef struct s_img
 {
 	void			*p_img;
 	char			*img;
@@ -51,12 +50,12 @@ typedef struct		s_img
 	int				endian;
 }					t_img;
 
-typedef	struct		s_env
+typedef struct s_env
 {
 	void			*mlx;
 	void			*win;
 	t_img			*sce;
-	t_key			keys;
+	char			keys[1024];
 	char			*title;
 	char			*fractal;
 	char			*n_ite;
@@ -83,8 +82,8 @@ typedef	struct		s_env
 	int				bud_min_ite;
 	int				bud_max_ite;
 	long double		sca;
-	long double		off_x;
-	long double		off_y;
+	long double		o_x;
+	long double		o_y;
 	int				mouse_x;
 	int				mouse_y;
 	int				select;
@@ -139,20 +138,15 @@ void				mouse_zoom_in(t_env *e, int m_x, int m_y);
 void				mouse_zoom_out(t_env *e, int m_x, int m_y);
 
 void				burning_ship(t_env *e);
-void				celtic(t_env *e);
-void				juliapow(t_env *e);
-void				mandeldrop(t_env *e);
-void				multibrot(t_env *e);
-void				tricornpow(t_env *e);
-void				test(t_env *e);
+void				julia(t_env *e);
+void				mandelbrot(t_env *e);
 
 void				refresh(t_env *e);
-void				render(t_env *e);
+void				ft_render(t_env *e);
 
 void				hud(t_env *e);
 
 int					usage(void);
-
 void				mid_guides(t_env *e);
 int					ft_abs(int i);
 

@@ -6,15 +6,13 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 00:20:00 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 14:56:56 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:33:47 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "../includes/fractol.h"
 
-int		get_color(t_env *e, int x, int y)
+int	get_color(t_env *e, int x, int y)
 {
 	int			i;
 	int			result;
@@ -32,24 +30,24 @@ int		get_color(t_env *e, int x, int y)
 	return (0);
 }
 
-int		set_color(int a, int r, int g, int b)
+int	set_color(int a, int r, int g, int b)
 {
-	int color;
+	int	color;
 
 	color = 0x00000000;
 	while (a > 255 || r > 255 || g > 255 || b > 255)
 	{
-		a = (a > 255) ? a - 255 : a;
-		r = (r > 255) ? r - 255 : r;
-		g = (g > 255) ? g - 255 : g;
-		b = (b > 255) ? b - 255 : b;
+		a = a - 255;
+		r = r - 255;
+		g = g - 255;
+		b = b - 255;
 	}
 	while (a < 0 || r < 0 || g < 0 || b < 0)
 	{
-		a = (a < 0) ? a + 255 : a;
-		r = (r < 0) ? r + 255 : r;
-		g = (g < 0) ? g + 255 : g;
-		b = (b < 0) ? b + 255 : b;
+		a = a + 255;
+		r = r + 255;
+		g = g + 255;
+		b = b + 255;
 	}
 	color = (a * 256 * 256 * 256) + (r * 256 * 256) + (g * 256) + b;
 	return (color);

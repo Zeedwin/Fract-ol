@@ -6,22 +6,22 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 00:20:00 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 14:57:18 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/17 16:06:45 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-static void					juliapow_test(t_env *e, int x, int y)
+static void	julia_init2(t_env *e, int x, int y)
 {
 	long double _Complex	c;
 	long double _Complex	z;
 	int						i;
 
 	i = 0;
-	c = ((e->mouse_x - e->off_x) / e->sca) + \
-		(((e->mouse_y - e->off_y) / e->sca) * I);
-	z = ((x - e->off_x) / e->sca) + (((y - e->off_y) / e->sca) * I);
+	c = ((e->mouse_x - e->o_x) / e->sca) + \
+		(((e->mouse_y - e->o_y) / e->sca) * I);
+	z = ((x - e->o_x) / e->sca) + (((y - e->o_y) / e->sca) * I);
 	while (i < e->ite && e->mod < 4)
 	{
 		z = cpowf(z, e->p) + c;
@@ -36,7 +36,7 @@ static void					juliapow_test(t_env *e, int x, int y)
 		put_color(e, x, y, i);
 }
 
-static void					julia_test(t_env *e, int x, int y)
+static void	julia_init(t_env *e, int x, int y)
 {
 	t_ldpt					c;
 	t_ldpt					z;
@@ -44,10 +44,10 @@ static void					julia_test(t_env *e, int x, int y)
 	int						i;
 
 	i = 0;
-	c.r = ((long double)e->mouse_x - e->off_x) / e->sca;
-	c.i = ((long double)e->mouse_y - e->off_y) / e->sca;
-	z.r = ((long double)x - e->off_x) / e->sca;
-	z.i = ((long double)y - e->off_y) / e->sca;
+	c.r = ((long double)e->mouse_x - e->o_x) / e->sca;
+	c.i = ((long double)e->mouse_y - e->o_y) / e->sca;
+	z.r = ((long double)x - e->o_x) / e->sca;
+	z.i = ((long double)y - e->o_y) / e->sca;
 	while (i < e->ite && e->mod < 4)
 	{
 		tmp = z.r;
@@ -64,7 +64,7 @@ static void					julia_test(t_env *e, int x, int y)
 		put_color(e, x, y, i);
 }
 
-void						juliapow(t_env *e)
+void	julia(t_env *e)
 {
 	int						i;
 	int						j;
@@ -78,9 +78,9 @@ void						juliapow(t_env *e)
 			e->mod = 0;
 			e->t = 0;
 			if (e->p == 2.0)
-				julia_test(e, i, j);
+				julia_init(e, i, j);
 			else
-				juliapow_test(e, i, j);
+				julia_init2(e, i, j);
 			i++;
 		}
 		i = 0;

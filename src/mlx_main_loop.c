@@ -6,13 +6,13 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 23:25:49 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/16 16:13:29 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/17 17:58:12 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-int		mlx_main_loop(t_env *e)
+int	mlx_main_loop(t_env *e)
 {
 	if (e)
 	{
