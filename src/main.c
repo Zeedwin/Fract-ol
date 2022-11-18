@@ -6,7 +6,7 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 23:23:18 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/17 19:17:09 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:49:52 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 static int	fractal_select(char *av)
 {
-	if (ft_strncmp("mandelbrot", av, 11) == 0)
+	if (ft_strncmp("mandelbrot", av, 11) == 0 || ft_strncmp("m", av, 2) == 0)
 		return (0);
-	else if (ft_strncmp("julia", av, 6) == 0)
+	else if (ft_strncmp("julia", av, 6) == 0 || ft_strncmp("j", av, 2) == 0)
 		return (2);
-	else if (ft_strncmp("burningship", av, 12) == 0)
+	else if (ft_strncmp("burningship", av, 12) == 0
+		|| ft_strncmp("b", av, 2) == 0)
 		return (3);
 	else
 		return (-1);
@@ -26,7 +27,7 @@ static int	fractal_select(char *av)
 
 void	set_hooks(t_env *e)
 {
-	mlx_hook(e->win, DESTROYNOTIFY, KEYRELEASEMASK, quit, e);
+	mlx_hook(e->win, DESTROYNOTIFY, 1L << 1, quit, e);
 	mlx_hook(e->win, KEYPRESS, 1, mlx_key_press, e);
 	mlx_hook(e->win, KEYRELEASE, 2, mlx_key_release, e);
 	mlx_mouse_hook(e->win, mlx_mouse_events, e);
@@ -78,8 +79,6 @@ int	main(int ac, char **av)
 	t_env		**e;
 
 	e = calloc(ac, sizeof(t_env));
-	//	error("\x1b[2;31mCan't initialize Fractol environment array\x1b[0m");
-	//(ac < 2 || ac > 7 ? usage() : 0);
 	if (ac < 2 || ac > 7)
 	{
 		usage();

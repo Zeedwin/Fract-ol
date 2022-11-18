@@ -6,7 +6,7 @@
 #    By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 22:55:17 by jgirard-          #+#    #+#              #
-#    Updated: 2022/11/17 19:04:44 by jgirard-         ###   ########.fr        #
+#    Updated: 2022/11/18 15:25:13 by jgirard-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,14 +46,12 @@ SRC_PATH =				./src
 SRC_NAME =  			burning_ship.c \
 						color.c \
 						fractal_color_init.c \
-						guides.c \
 						init.c \
 						julia.c \
 						mlx_main_loop.c \
-						mlx_image_draw.c \
-						mlx_key_press.c \
-						mlx_key_release.c \
-						mlx_key_repeated.c \
+						mlx_keyp_check.c \
+						mlx_keyr_check.c \
+						mlx_key_parsed.c \
 						mlx_mouse.c \
 						mandelbrot.c \
 					    ft_render.c \

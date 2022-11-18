@@ -6,7 +6,7 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 00:20:00 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/17 16:06:45 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/18 15:22:04 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ static void	julia_init2(t_env *e, int x, int y)
 
 static void	julia_init(t_env *e, int x, int y)
 {
-	t_ldpt					c;
-	t_ldpt					z;
+	t_ini					c;
+	t_ini					z;
 	long double				tmp;
 	int						i;
 

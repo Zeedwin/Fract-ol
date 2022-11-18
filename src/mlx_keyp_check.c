@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_key_release.c                                  :+:      :+:    :+:   */
+/*   mlx_key_press.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 23:23:55 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/17 19:26:06 by jgirard-         ###   ########.fr       */
+/*   Created: 2022/11/15 23:23:46 by jgirard-          #+#    #+#             */
+/*   Updated: 2022/11/18 13:57:13 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
+#include <stdio.h>
 
-int	mlx_key_release(int key, t_env *e)
+int	mlx_key_press(int key, t_env *e)
 {
-	//if (key < sizeof(e->keys))
-		e->keys[key] = 0;
+	e->keys[key] = 1;
 	return (0);
 }

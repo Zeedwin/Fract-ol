@@ -6,13 +6,13 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 00:20:00 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/17 16:08:14 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:33:40 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-int	scene_init(t_env *e)
+int	fractal_init(t_env *e)
 {
 	int			bpp;
 	int			s_l;
@@ -35,14 +35,14 @@ int	scene_init(t_env *e)
 	return (0);
 }
 
-static void	options_init(t_env *e)
+static void	fract_init_vars(t_env *e)
 {
 	e->w_w = 1540;
 	e->w_h = 1000;
 	e->sca = 400;
-	e->ite = 150;
-	e->bud_min_ite = 150;
-	e->bud_max_ite = 10000;
+	e->ite = 120;
+	e->bud_min_ite = 10;
+	e->bud_max_ite = 100000;
 	e->mod = 0;
 	e->hue = 0x00000000;
 	e->old_hue = 0x00000000;
@@ -58,14 +58,13 @@ static void	options_init(t_env *e)
 	e->refresh = 1;
 	e->p = 2.0;
 	e->t = 0;
-	if (DBUG == 1)
-		e->debug = 1;
+	e->debug = 1;
 }
 
 void	init(t_env *e)
 {
-	options_init(e);
+	fract_init_vars(e);
 	e->mlx = mlx_init();
 	e->win = mlx_new_window(e->mlx, e->w_w, e->w_h, "Fract'ol");
-	scene_init(e);
+	fractal_init(e);
 }

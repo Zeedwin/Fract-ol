@@ -6,7 +6,7 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:24:06 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/17 19:19:42 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/18 15:26:11 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,15 @@
 # include <math.h>
 # include "../minilibx_opengl_20191021/mlx.h"
 # include "mac_keys.h"
-
-# define DBUG			1
-
 # define DESTROYNOTIFY			17
-# define KEYPRESSMASK			1L<<0
-# define KEYRELEASEMASK			1L<<1
 # define KEYPRESS				2
 # define KEYRELEASE				3
 
-typedef struct s_ldpt
+typedef struct s_ini
 {
 	long double		r;
 	long double		i;
-}					t_ldpt;
+}					t_ini;
 
 typedef struct s_img
 {
@@ -81,9 +76,6 @@ typedef struct s_env
 	int				ite;
 	int				bud_min_ite;
 	int				bud_max_ite;
-	long double		sca;
-	long double		o_x;
-	long double		o_y;
 	int				mouse_x;
 	int				mouse_y;
 	int				select;
@@ -92,13 +84,16 @@ typedef struct s_env
 	int				hud;
 	int				hue;
 	int				old_hue;
+	int				mode;
+	int				refresh;
 	double			dof_a;
 	double			dof_b;
 	double			dof_c;
 	double			dof_s;
+	long double		sca;
+	long double		o_x;
+	long double		o_y;
 	long double		mod;
-	int				mode;
-	int				refresh;
 	long double		p;
 	long double		t;
 }					t_env;
@@ -108,46 +103,34 @@ typedef struct s_env
 */
 
 void				init(t_env *e);
-int					scene_init(t_env *e);
 void				ft_putendl(char *s);
-int					quit(t_env *e);
 void				error(char *str);
-char				*get_fractal(t_env *e);
-
-int					mlx_mouse_events(int btn, int x, int y, t_env *e);
-
-int					mlx_main_loop(t_env *e);
-
 void				mlx_keyboard_repeated(t_env *e);
-int					mlx_key_release(int key, t_env *e);
-int					mlx_key_press(int key, t_env *e);
-int					mlx_key_simple(int key, t_env *e);
-
 void				color_range_1_4(t_env *e, int x, int y, int i);
 void				color_range_5_6(t_env *e, int x, int y, int i);
 void				color_range_7(t_env *e, int x, int y, int i);
 void				orbit_color_range(t_env *e, int x, int y, int i);
 void				put_color(t_env *e, int x, int y, int i);
-int					get_color(t_env *e, int x, int y);
-int					set_color(int a, int r, int g, int b);
-
-int					mlx_img_pix_put(t_img *sce, int x, int y, int color);
-void				mlx_img_line(t_img *sce, t_ldpt p1, t_ldpt p2, int c);
-
 void				mouse_zoom_in(t_env *e, int m_x, int m_y);
 void				mouse_zoom_out(t_env *e, int m_x, int m_y);
-
 void				burning_ship(t_env *e);
 void				julia(t_env *e);
 void				mandelbrot(t_env *e);
-
 void				refresh(t_env *e);
 void				ft_render(t_env *e);
-
 void				hud(t_env *e);
-
+int					fractal_init(t_env *e);
+int					quit(t_env *e);
+int					mlx_mouse_events(int btn, int x, int y, t_env *e);
+int					mlx_main_loop(t_env *e);
+int					mlx_key_release(int key, t_env *e);
+int					mlx_key_press(int key, t_env *e);
+int					mlx_key_simple(int key, t_env *e);
+int					get_color(t_env *e, int x, int y);
+int					set_color(int a, int r, int g, int b);
+int					mlx_img_pix_put(t_img *sce, int x, int y, int color);
 int					usage(void);
-void				mid_guides(t_env *e);
 int					ft_abs(int i);
+char				*get_fractal(t_env *e);
 
 #endif

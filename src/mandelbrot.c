@@ -6,13 +6,14 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:34:10 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/17 12:25:58 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:28:33 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
+#include <stdio.h>
 
-static void					multibrot_test(t_env *e, int x, int y)
+static void	mandelbrot_init1(t_env *e, int x, int y)
 {
 	long double _Complex	c;
 	long double _Complex	z;
@@ -35,10 +36,10 @@ static void					multibrot_test(t_env *e, int x, int y)
 		put_color(e, x, y, i);
 }
 
-static void					mandelbrot_test(t_env *e, int x, int y)
+static void	mandelbrot_init2(t_env *e, int x, int y)
 {
-	t_ldpt					c;
-	t_ldpt					z;
+	t_ini					c;
+	t_ini					z;
 	long double				tmp;
 	int						i;
 
@@ -63,7 +64,7 @@ static void					mandelbrot_test(t_env *e, int x, int y)
 		put_color(e, x, y, i);
 }
 
-void						mandelbrot(t_env *e)
+void	mandelbrot(t_env *e)
 {
 	int						i;
 	int						j;
@@ -77,9 +78,9 @@ void						mandelbrot(t_env *e)
 			e->mod = 0;
 			e->t = 0;
 			if (e->p == 2)
-				mandelbrot_test(e, i, j);
+				mandelbrot_init2(e, i, j);
 			else
-				multibrot_test(e, i, j);
+				mandelbrot_init1(e, i, j);
 			i++;
 		}
 		i = 0;
