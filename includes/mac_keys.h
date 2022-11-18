@@ -6,7 +6,7 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:24:06 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/18 15:16:12 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/18 17:57:47 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,9 @@
 # define K_DEL						117
 # define K_BSP						51
 # define K_SPC						49
+# define L_ARR						123
+# define R_ARR						124
+# define U_ARR						126
+# define D_ARR						125
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:34:10 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/11/18 16:38:19 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/11/18 22:08:21 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,10 @@ static void	mlx_key_1(t_env *e)
 	{
 		e->mode = 6;
 	}
+	if (e->keys[R_ARR])
+	{
+		e->o_x -= 10;
+	}
 }
 
 static void	mlx_key_2(t_env *e)
@@ -74,6 +78,22 @@ static void	mlx_key_2(t_env *e)
 	}
 }
 
+static void	mlx_key_4(t_env *e)
+{
+	if (e->keys[L_ARR])
+	{
+		e->o_x += 10;
+	}
+	if (e->keys[U_ARR])
+	{
+		e->o_y += 10;
+	}
+	if (e->keys[D_ARR])
+	{
+		e->o_y -= 10;
+	}
+}
+
 void	mlx_keyboard_repeated(t_env *e)
 {
 	if (!e)
@@ -81,4 +101,6 @@ void	mlx_keyboard_repeated(t_env *e)
 	mlx_key_1(e);
 	mlx_key_2(e);
 	mlx_key_3(e);
+	mlx_key_4(e);
+	e->refresh = 1;
 }
